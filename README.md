@@ -17,9 +17,9 @@ So, as the pot meter is adjusted, the brightness of the PWM is adjusted, mapped 
 ## MCC Melody Example Components
 Example Components are a tight integration of learning material directly into MCC. This allows users to conveniently place configuration instructions side-by-side to the components they are configuring. For more information, refer to the [MCC Melody Example Components Introduction](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES&version=latest&redirect=true). 
 
-**Note:** The image below shows the ADCC Example Component, as it would be moving to the ADCC Data Streamer (Callbacks Implementation), having implemented the ADCC Basic Printf (Callbacks Implementation). In this case a diff between the two examples is shown. 
+**Note:** The image below shows the completed configuration of the ADCC Data Streamer Example (Callbacks implementation), to which a PWM1_16BIT component has been added. 
 
-![MCC Melody Example Components](images/ADCCDataStreamer_CallbacksFromBasiPrintfCallbacks-Intro.png)
+![MCC Melody Example Components](images/ADCCDataStreamerCallbacks_withPWM.png)
 
 
 Complete projects, available in [MPLAB® Discover](https://mplab-discover.microchip.com) or GitHub, are specific to a board and microcontroller. However, the current project could be recreated on a range of supported microcontrollers by following the steps in the example component.
@@ -48,15 +48,19 @@ Example Components are related to [MCC Melody Design Patterns for Control Flow](
 
 
 ## Setup
-All instructions required to recreate this example are listed below, under Configuration Instructions.   
+The instructions required to recreate this example are listed below, under Configuration Instructions.   
 
-![TIMER Toggle LED, Callbacks Implementation](images/ADCC_DataStreamer_Callbacks-ConfigComplete.png)
+![ADCC Data Streamer, Callbacks implementation](images/ADCC_DataStreamer_Callbacks-ConfigComplete.png)
 
-Once you have loaded the project in MPLAB X IDE, you will also be able to find more information from Tooltips and links next to the instructions 
-[![Tooltip and link](images/Icon-info-circle-fill.png "Find the Tx pin from your schematic and set it in Pin Grid View.")](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.CONFIGHELP.UART.CNANO&version=latest&redirect=true).
+To these, the following additional steps are needed. 
 
+**Note:** The timer period is changed to 0.02s, i.e., 20 ms. 
 
-![Tooltips and context help](images/PinsConfiguration_SelectPinForUartTx.png)
+![PIC PWM use-case: Gradually Brightening LED](images/ADCC_DataStreamerCallbacks_PWM_ConfigInstructions.png)
+
+The Pins configuration are shown below:
+
+![PIC PWM use-case: PIN congiguration instructions](images/ADCC_DataStreamerCallbacks_PWM_PINConfigInstructions.png)
 
 
 ## Operation
@@ -96,6 +100,10 @@ You should see a *data_streamer Properties* window, showing the *adcResult* and 
 If all is correct, when changing the pot meter value, you should see similar results to the below image.  
 
 ![Running the ADCC Basic Printf Example](images/Running_the_ADCC_Data_Streamer_Example.png)
+
+Below is a picture of the Curiosity Nano Explorer board, with the example running. 
+
+![Running the ADCC Basic Printf Example with PWM on the Curiosity Nano Explorer](images/ADCC_DataStreamer_PWM_Running_Explorer.png)
 
 
 ## Summary
