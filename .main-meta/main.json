@@ -4,8 +4,8 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f57q43-adcc-data-streamer-pwm-callbacks-mcc",
-        "version": " ",
-        "displayName": "",
+        "version": "1.0.0",
+        "displayName": "pic18f57q43-adcc-data-streamer-pwm-callbacks-mcc",
         "projectName": "pic18f57q43-adcc-data-streamer-pwm-callbacks-mcc",
         "shortDescription": "PWM control of LED has been added to the ADCC Data Streamer Example, of the MCC Melody ADCC Example Component (Callbacks Implementation). LED brightness is varies with POT-Meter and ADC samples are visualized using the Data Streamer every 100ms.\r\n\r\n",
         "ide": {
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC18F-Q_DFP",
+            "semverRange": "^1.24.430"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": "^5.7.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,8 +37,22 @@
             }
         },
         "author": "Glen Nilsen",
-        "peripherals": [],
-        "keywords": [],
+        "peripherals": [
+            "ADC",
+            "GPIO",
+            "UART",
+            "PWM"
+        ],
+        "keywords": [
+            "Data Visualizer",
+            "MPLAB Data Visualizer",
+            "ADC",
+            "UART",
+            "Getting Started",
+            "Melody",
+            "MCC Melody",
+            "PWM"
+        ],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
