@@ -7,7 +7,7 @@
         "version": "1.0.0",
         "displayName": "pic18f57q43-adcc-data-streamer-pwm-callbacks-mcc",
         "projectName": "pic18f57q43-adcc-data-streamer-pwm-callbacks-mcc",
-        "shortDescription": "PWM control of LED has been added to the ADCC Data Streamer Example, of the MCC Melody ADCC Example Component (Callbacks Implementation). LED brightness is varies with POT-Meter and ADC samples are visualized using the Data Streamer every 100ms.\r\n\r\n",
+        "shortDescription": "PWM control of LED has been added to the ADCC Data Streamer Example, of the MCC Melody ADCC Example Component (Callbacks Implementation). LED brightness is varies with POT-Meter and ADC samples are visualized using the Data Streamer every 100ms.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=6.20.0"
