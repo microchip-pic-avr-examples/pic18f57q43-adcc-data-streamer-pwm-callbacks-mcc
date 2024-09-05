@@ -8,9 +8,9 @@
 
 # MCC Melody ADC Data Streamer PWM Example - Callbacks Implementation (PIC18F57Q43)
 
-This example builds on the [ADC Data Streamer PWM example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.DATA.STREAMER&version=latest&redirect=true "Analog-to-Digital Conversion (ADC) Data Streamer example"), of the MCC Melody ADCC Example Component (Callback Implementation).  Displays ADCC samples visualized with the Data Streamer. An ADC conversion is taken every 100 ms on the selected analog channel, also toggling a LED and Debug GPIO. 
+The [ADC Data Streamer PWM example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.DATA.STREAMER&version=latest&redirect=true "Analog-to-Digital Conversion (ADC) Data Streamer example"), of the MCC Melody ADCC Example Component, is used in the Callbacks implementation and displays ADCC samples visualized with the Data Streamer. An Analog-to-Digital Conversion measurement is taken every 100 ms on the selected analog channel, also toggling an LED and Debug GPIO.
 
-A PWM use-case from the [How to Use the PWMx_16BIT PLIB Driver](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=SCF-PIC8-PWM-V1&version=latest&redirect=true) section, from the MCC Melody API reference for PIC16F/18F. Specifically the **PIC PWM Use Case: Gradually Brightening LED**. 
+A PWM1_16BIT component is added to this example. For more information, check out the "PIC® PWM Use Case: Gradually Brightening LED" use case from the [How to Use the PWMx_16BIT PLIB Driver](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=SCF-PIC8-PWM-V1&version=latest&redirect=true) section in *MCC Melody API reference for PIC16F/18F*. It shows how adjusting the potentiometer influences the brightness of the PWM, which is mapped to a % of the range of the ADC value.
 
 So, as the pot meter is adjusted, the brightness of the PWM is adjusted, mapped to a % of the range of the ADC value.
 
@@ -52,7 +52,7 @@ The instructions required to recreate this example are listed below, under Confi
 
 ![ADCC Data Streamer, Callbacks implementation](images/ADCC_DataStreamer_Callbacks-ConfigComplete.png)
 
-To these, the following additional steps are needed. 
+The following additional steps are required for this example.
 
 **Note:** The timer period is changed to 0.02s, i.e., 20 ms. 
 
@@ -67,46 +67,47 @@ The Pins configuration are shown below:
 The image below shows the [ADCC Basic Printf example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.PRINTF&version=latest&redirect=true
 ) running, using the MPLAB Data Visualizer. 
 
+After implementing the settings, similar results to the below image will be shown.
+
+![Running the ADCC Basic Printf Example](images/Running_the_ADCC_Data_Streamer_Example.png)
+
+The image below shows the example running on the Curiosity Nano Explorer board. 
+
+![Running the ADCC Basic Printf Example with PWM on the Curiosity Nano Explorer](images/ADCC_DataStreamer_PWM_Running_Explorer.png)
+
+## Data Visualizer Setup 
+
 1) Click the ![Data Visualizer icon](images/Icon-MPLAB-DataVisualizer_1cm.png) icon to open the MPLAB Data Visualizer.
-2) Under the *Variable Streamers* tab (on the left hand side), click the ![Import ds file](images/button-import-ds-file.png "Import DS file.") button, to import a *.ds* file.
-3) From your project root, navigate into *mmc_generated_files/data_streamer/* directory.
-4) Click on the *data_streamer.ds* file to select it. 
-5) Then click the ![open button](images/button-open.png) button, to load the ds file.
+2) Under the *Variable Streamers* tab (on the left hand side), click the ![Import ds file](images/button-import-ds-file.png "Import DS file.") button to import a *.ds* file.
+3) From your project root, navigate into `mmc_generated_files/data_streamer/` directory.
+4) Click the `data_streamer.ds` file to select it. 
+5) Then click the ![open button](images/button-open.png) button, to load the `ds` file.
 
-![Loading the ds file](images/Running the ADCC Data Streamer Example)
+![Loading the ds file](images/RunningDataStreamerEx-Open_ds_file_12cm.png)
 
-You should see a *data_streamer Properties* window, showing the *adcResult* and *adcSampleCount* variables loaded. 
+The data_streamer Properties window will open up, displaying the loaded adcResult and adcSampleCount variables. 
 
 1) Click the ![save button](images/button-save.png) button, to load this data streamer configuration. 
 
 ![ds file loaded](images/ds_file_loaded_1_12cm.png)
 
-1) Click on the ![no source button](images/button-no-source.png) button.
+1) Click the ![no source button](images/button-no-source.png) button.
 2) Select your board from those available. 
 
-   **Note:** If your board is not recognised by the MPLAB Data Visualizer, got to the Device Manager (Windows), to determine the COMx number.  
+   **Note:** If your board is not recognised by the MPLAB Data Visualizer, go to the Device Manager (Windows) to determine the COMx number.  
 
-3) Click on the ![settings gear icon](images/Icon-DataVisualizer-SettingsGear.png) icon, to bring up the COMx Settings. 
+3) Click the ![settings gear icon](images/Icon-DataVisualizer-SettingsGear.png) icon to bring up the COMx Settings. 
 4) Set the baud rate to 115200, then click out of the window to close the settings. 
-5) Click the ![Time Plot icon](images/Icon-DataVisualizer_TimePlot.png) icon, to plot all variables. 
+5) Click the ![Time Plot icon](images/Icon-DataVisualizer_TimePlot.png) icon to plot all variables. 
 
 ![Data Streamer Config](images/DataStreamerConfig_25cm.png)
 
-1) Click on the *Connections* button.
+1) Click the **Connections** button.
 2) Under Debug GPIO, click the ![Add to time plot icon](images/Icon-DataVisualizer_TimePlot.png "Display as raw data on time plot.") icon, to add to the time plot.
 
 ![Debug I/O Time Plot](images/DebugIO_TimePlot_8cm.png)
 
-If all is correct, when changing the pot meter value, you should see similar results to the below image.  
 
-![Running the ADCC Basic Printf Example](images/Running_the_ADCC_Data_Streamer_Example.png)
-
-Below is a picture of the Curiosity Nano Explorer board, with the example running. 
-
-![Running the ADCC Basic Printf Example with PWM on the Curiosity Nano Explorer](images/ADCC_DataStreamer_PWM_Running_Explorer.png)
-
-
-## Summary
 For more example components, open the stand-alone Content Manager ![CM_icon](images/Icon-MPLAB-CM24.png) in MCC. 
 
 ![Standalone_CM](images/MCC_ContentManager_Examples_18cm.png) 
