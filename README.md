@@ -1,10 +1,4 @@
-<a target="_blank" href="https://www.microchip.com/" id="top-of-page">
-   <picture>
-      <source media="(prefers-color-scheme: light)" srcset="images/mchp_logo_light.png" width="350">
-      <source media="(prefers-color-scheme: dark)" srcset="images/mchp_logo_dark.png" width="350">
-      <img alt="Microchip Technologies Inc." src="https://www.microchip.com/content/experience-fragments/mchp/en_us/site/header/master/_jcr_content/root/responsivegrid/header/logo.coreimg.100.300.png/1605828081463/microchip.png">
-   </picture>
-</a>
+<a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
 # MCC Melody ADC Data Streamer PWM Example - Callbacks Implementation (PIC18F57Q43)
 
@@ -13,6 +7,13 @@ The [ADC Data Streamer PWM example](https://onlinedocs.microchip.com/v2/keyword-
 A PWM1_16BIT component is added to this example. For more information, check out the "PIC® PWM Use Case: Gradually Brightening LED" use case from the [How to Use the PWMx_16BIT PLIB Driver](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=SCF-PIC8-PWM-V1&version=latest&redirect=true) section in *MCC Melody API reference for PIC16F/18F*. It shows how adjusting the potentiometer influences the brightness of the PWM, which is mapped to a % of the range of the ADC value.
 
 So, as the pot meter is adjusted, the brightness of the PWM is adjusted, mapped to a % of the range of the ADC value.
+
+## Video Building This Example 
+
+[![Video Building this Example](images/6_Adding%20PWM%20to%20Data%20Streamer-VideoImage.png)](https://youtu.be/-eSdDSJB1uE?list=PLtQdQmNK_0DTA08RmyuJH4dyNrYGDGi0l)
+
+**Video:** [Introducing MCC Melody Example Components](https://youtu.be/zK5jLiIIYvE?list=PLtQdQmNK_0DTA08RmyuJH4dyNrYGDGi0l)
+(while building the Polled version of the Timer Toggle LED example).  
 
 ## MCC Melody Example Components
 Example Components are a tight integration of learning material directly into MCC. This allows users to conveniently place configuration instructions side-by-side to the components they are configuring. For more information, refer to the [MCC Melody Example Components Introduction](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES&version=latest&redirect=true). 
